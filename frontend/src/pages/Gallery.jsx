@@ -1,11 +1,8 @@
-import AppNavbar from "../components/AppNavbar"
 import bg3 from "../assets/images/bg3.jpg"
-
 
 export default function Gallery() {
   return (
     <div className="bg-min-h-screen text-[#0e5a96]">
-      <AppNavbar />
       {/* Hero Section */}
       <section className="relative h-[32vh] bg-cover bg-center flex items-center justify-center">
         <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-white/0" />

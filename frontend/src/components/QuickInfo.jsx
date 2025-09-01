@@ -1,17 +1,21 @@
 export default function QuickInfo() {
   const cardBase =
-    "relative rounded-2xl bg-white/55 md:bg-white/60 backdrop-blur-md " +
-    "ring-1 ring-white/50 shadow-[0_10px_30px_-10px_rgba(17,109,181,0.18)] " +
-    "transition-all duration-300 hover:shadow-[0_16px_40px_-10px_rgba(17,109,181,0.28)] hover:-translate-y-0.5";
+    "relative rounded-2xl bg-white/60 md:bg-white/65 backdrop-blur-md " +
+    "ring-1 ring-white/55 shadow-[0_14px_30px_-12px_rgba(17,109,181,0.20)] " +
+    "transition-all duration-300 hover:shadow-[0_18px_42px_-12px_rgba(17,109,181,0.30)] hover:-translate-y-0.5 " +
+    "hover:ring-1 hover:ring-[#116db5]/15";
 
   const iconWrap =
     "inline-flex h-10 w-10 items-center justify-center rounded-full " +
-    "bg-[#116db5]/10 ring-1 ring-[#116db5]/15 shadow-[0_0_0_4px_rgba(17,109,181,0.06)]";
+    "bg-[#116db5]/12 ring-1 ring-[#116db5]/20 shadow-[0_0_0_3px_rgba(17,109,181,0.06)]";
 
   return (
-    <section className="relative py-14 md:py-16">
+    <section className="relative py-14 md:py-16 font-sans">
       {/* soft sky wash behind cards so they feel connected to the hero clouds */}
       <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-sky-50/60 via-white/70 to-white" />
+
+      {/* gentle top vignette for extra depth */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-black/5 to-transparent" />
 
       {/* top wave that tucks under the cloud banner */}
       <div className="pointer-events-none absolute inset-x-0 -top-8 -z-10 h-8">
@@ -22,22 +26,25 @@ export default function QuickInfo() {
 
       <div className="mx-auto max-w-6xl px-6 md:px-10">
         <div className="text-left md:text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#116db5] tracking-tight">
+          {/* Title: Merriweather */}
+          <h2 className="font-heading-en text-4xl md:text-5xl font-bold leading-tight text-[#116db5] tracking-[-0.01em]">
             Join Us This Sunday
           </h2>
-          <p className="mt-2 text-base md:text-lg text-[#0e5a96]/80">
+          {/* Subtitle: Lora */}
+          <p className="font-subhead mt-2 text-base md:text-lg text-[#0e5a96]/85 tracking-[0.01em]">
             A welcoming community of worship, connection, and hope
           </p>
-          <p className="mt-1 text-sm italic text-[#0e5a96]/60">
+          {/* Scripture: Lora italic */}
+          <p className="font-subhead mt-1 text-sm md:text-[0.95rem] italic text-[#0e5a96]/60 max-w-xl md:mx-auto">
             “Let us not give up meeting together…” — Hebrews 10:25
           </p>
         </div>
 
         {/* Grid */}
-        <div className="mt-16 grid gap-6 md:grid-cols-3">
+        <div className="mt-16 grid gap-6 md:gap-8 md:grid-cols-3">
           {/* Service Times */}
           <div className={cardBase}>
-            <div className="relative z-10 p-6">
+            <div className="relative z-10 p-5 md:p-6">
               <div className="flex items-center gap-3">
                 <span className={iconWrap}>
                   {/* church bell icon */}
@@ -53,9 +60,12 @@ export default function QuickInfo() {
                     <path d="M13.73 21a2 2 0 01-3.46 0" />
                   </svg>
                 </span>
-                <h3 className="text-lg font-semibold text-[#0e5a96]">Service Times</h3>
+                {/* Card heading: Merriweather */}
+                <h3 className="font-heading-en pt-2.5 text-xl md:text-2xl font-semibold tracking-[-0.005em] text-[#0e5a96]">
+                  Service Times
+                </h3>
               </div>
-              <div className="mt-4 space-y-1 text-gray-700">
+              <div className="mt-4 space-y-1 text-[#334155]">
                 <p className="font-medium">Sundays · 1:00 PM</p>
                 <p>Friday Prayer · 7:30 PM</p>
               </div>
@@ -64,7 +74,7 @@ export default function QuickInfo() {
 
           {/* Location + Embedded Map */}
           <div className={cardBase}>
-            <div className="relative z-10 p-6">
+            <div className="relative z-10 p-5 md:p-6">
               <div className="flex items-center gap-3">
                 <span className={iconWrap}>
                   <svg
@@ -79,22 +89,24 @@ export default function QuickInfo() {
                     <path d="M12 8v6M9 11h6" />
                   </svg>
                 </span>
-                <h3 className="text-lg font-semibold text-[#0e5a96]">Location</h3>
+                <h3 className="font-heading-en pt-2.5 text-xl md:text-2xl font-semibold tracking-[-0.005em] text-[#0e5a96]">
+                  Location
+                </h3>
               </div>
-              <div className="mt-3 text-gray-700">
+              <div className="mt-3 text-[#334155]">
                 <p className="font-medium">2025 S Goebbert Rd</p>
                 <p>Arlington Heights, IL 60005</p>
               </div>
 
               {/* map */}
               <div className="mt-4 overflow-hidden rounded-xl ring-1 ring-black/5">
-                <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+                <div className="relative w-full aspect-video">
                   <iframe
                     title="Springwell Presbyterian Church Map"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.824169429409!2d-87.629799!3d41.878113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDUyJzQxLjIiTiA4N8KwMzcnNDcuMyJX!5e0!3m2!1sen!2sus!4v1700000000000"
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    className="absolute left-0 top-0 h-full w-full border-0"
+                    className="absolute inset-0 h-full w-full border-0"
                   />
                 </div>
               </div>
@@ -103,11 +115,10 @@ export default function QuickInfo() {
 
           {/* New Visitors */}
           <div className={cardBase}>
-
-            <div className="relative z-10 p-6">
+            <div className="relative z-10 p-5 md:p-6">
               <div className="flex items-center gap-3">
                 <span className={iconWrap}>
-                  {/* dove-like / fellowship icon */}
+                  {/* dove/fellowship icon */}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -120,9 +131,11 @@ export default function QuickInfo() {
                     <path d="M14 13c0 3 2 5 7 5-3 2-6 3-9 3a9 9 0 01-9-9 9 9 0 019-9c-2 2-2 4-2 6" />
                   </svg>
                 </span>
-                <h3 className="text-lg font-semibold text-[#0e5a96]">New Here?</h3>
+                <h3 className="font-heading-en pt-2.5 text-xl md:text-2xl font-semibold tracking-[-0.005em] text-[#0e5a96]">
+                  New Here?
+                </h3>
               </div>
-              <p className="mt-3 text-gray-700">
+              <p className="mt-3 text-[#334155]">
                 We’d love to welcome you. Let us know you’re coming and we’ll help you get connected.
               </p>
             </div>

@@ -1,30 +1,52 @@
-import AppNavbar from "../components/AppNavbar";
-import bg3 from "../assets/images/bg4.jpg"
-import lols from "../assets/images/stick.png"
-import elmo from "../assets/images/elmo.png"
+import { useEffect, useState } from "react";
+import lols from "../assets/images/stick.png";
+import elmo from "../assets/images/elmo.png";
 
 export default function About() {
+  const [showTopBtn, setShowTopBtn] = useState(false);
+
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    const onScroll = () => {
+      const beliefsSection = document.getElementById("beliefs");
+      if (!beliefsSection) return;
+
+      const halfHeight = beliefsSection.offsetTop + beliefsSection.offsetHeight / 2;
+      setShowTopBtn(window.scrollY > halfHeight);
+    };
+
+    onScroll(); // initialize
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <div className="bg-white min-h-screen">
+    // Inter everywhere by default
+    <div className="bg-white min-h-screen font-sans">
       {/* HERO */}
       <section
-        className="relative h-[40vh] bg-cover bg-top !flex flex-col text-center"
+        className="relative h-[40vh] bg-cover bg-top !flex flex-col text-center pt-32 md:pt-40 pb-24"
         style={{
           backgroundImage:
             "url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80')",
         }}
-
       >
-        <AppNavbar />
-        {/*<div className="absolute inset-0 bg-black/40" />*/}
-        <h1 className="relative text-white text-5xl font-bold drop-shadow-lg">
+        {/* Title uses Merriweather */}
+        <h1 className="relative text-white text-5xl font-bold drop-shadow-lg font-heading-en">
           About Us
         </h1>
       </section>
 
       {/* OUR BELIEFS */}
-      <section className="max-w-5xl mx-auto px-6 py-16 text-center">
-        <h2 className="text-3xl font-bold text-[#116db5] mb-6">Our Beliefs</h2>
+      <section id="beliefs" className="max-w-5xl mx-auto px-6 py-16 text-center">
+        {/* Merriweather for section heading */}
+        <h2 className="text-3xl font-bold text-[#116db5] mb-6 font-heading-en">
+          Our Beliefs
+        </h2>
+        {/* Body stays Inter */}
         <p className="text-gray-600 leading-relaxed">
           We believe in the authority of Scripture as the inspired Word of God.
           We affirm the Trinity — Father, Son, and Holy Spirit — as the foundation
@@ -36,7 +58,9 @@ export default function About() {
       {/* OUR MISSION */}
       <section className="bg-sky-50 py-16 px-6">
         <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-[#116db5] mb-6">Our Mission</h2>
+          <h2 className="text-3xl font-bold text-[#116db5] mb-6 font-heading-en">
+            Our Mission
+          </h2>
           <p className="text-gray-700 leading-relaxed">
             Our mission is to glorify God by making disciples, loving our community,
             and serving the world. We seek to be a place of worship, hope, and
@@ -47,31 +71,67 @@ export default function About() {
 
       {/* LEADERSHIP / COMMUNITY */}
       <section className="max-w-6xl mx-auto px-6 py-16">
-        <h2 className="text-3xl font-bold text-[#116db5] text-center mb-12">
+        <h2 className="text-3xl font-bold text-[#116db5] text-center mb-12 font-heading-en">
           Our Community
         </h2>
 
         <div className="grid gap-8 md:grid-cols-3">
           {/* Example leader/member card */}
           <div className="bg-white shadow-md rounded-2xl p-6 text-center border border-gray-100">
-            <img src={lols} className="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-4" />
-            <h3 className="text-xl font-semibold">Washing <br /> Ma Shins</h3>
+            <img
+              src={lols}
+              className="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-4"
+            />
+            <h3 className="text-xl font-semibold font-heading-en">
+              Washing <br /> Ma Shins
+            </h3>
             <p className="text-gray-500">Head Pastor</p>
           </div>
 
           <div className="bg-white shadow-md rounded-2xl p-6 text-center border border-gray-100">
-            <img src={elmo} className="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-4" />
-            <h3 className="text-xl font-semibold">Danny-San Park</h3>
+            <img
+              src={elmo}
+              className="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-4"
+            />
+            <h3 className="text-xl font-semibold font-heading-en">Danny-San Park</h3>
             <p className="text-gray-500">Prez</p>
           </div>
 
           <div className="bg-white shadow-md rounded-2xl p-6 text-center border border-gray-100">
             <div className="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-4" />
-            <h3 className="text-xl font-semibold"></h3>
+            <h3 className="text-xl font-semibold font-heading-en"></h3>
             <p className="text-gray-500">Worship Leader</p>
           </div>
         </div>
       </section>
+
+      {/* FLOATING BACK-TO-TOP BUTTON */}
+      <button
+        onClick={handleScrollToTop}
+        aria-label="Back to top"
+        aria-hidden={!showTopBtn}
+        className={`
+          fixed bottom-6 right-6 z-50
+          h-8 w-8 !rounded-md
+          bg-white text-[#116db5]
+          shadow-lg ring-1 ring-slate-200
+          flex items-center justify-center
+          transition-all duration-300 ease-out
+          hover:scale-105 hover:ring-slate-300
+          focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#116db5]/40
+          ${showTopBtn ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2 pointer-events-none"}
+        `}
+      >
+        <svg
+          viewBox="0 0 24 24"
+          className="h-5 w-5"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path d="M7.41 12.59 12 8l4.59 4.59L18 11.17 12 5l-6 6z" />
+          <path d="M7.41 17.59 12 13l4.59 4.59L18 16.17 12 10l-6 6z" />
+        </svg>
+      </button>
     </div>
   );
 }

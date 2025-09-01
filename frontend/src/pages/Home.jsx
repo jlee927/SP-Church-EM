@@ -25,21 +25,21 @@ export default function Home() {
       setShowTopBtn(window.scrollY > halfHero);
     };
 
-    onScroll(); // initialize state on mount
+    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
-    <div className="">
+    // Set Inter as default UI/body font
+    <div className="font-sans">
       {/* HERO */}
       <section
         id="hero"
         className="relative min-h-[100vh] bg-cover bg-center md:bg-top"
         style={{ backgroundImage: `url(${bg3})` }}
-        aria-label="Springwell Presbyterian Church hero"
+        aria-label="Spring Well Presbyterian Church hero"
       >
-        <AppNavbar />
 
         {/* soft overlay for readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/10 to-white/0" />
@@ -50,22 +50,29 @@ export default function Home() {
             className="
             relative z-10
             mx-6 md:mx-24 lg:mx-36
-            py-32 md:py-24
+            pt-32 md:pt-48 pb-24
+
             text-[#116db5]
             max-w-3xl
           "
           >
-            <h1 className="text-5xl font-bold drop-shadow-lg leading-tight">
+            {/* Korean heading */}
+            <h1 className="font-heading-ko text-5xl font-bold drop-shadow-lg leading-tight">
               생명샘 장로교회
             </h1>
-            <h1 className="mt-2 text-5xl font-bold drop-shadow-lg leading-tight">
-              Springwell Presbyterian Church
+
+            {/* English heading */}
+            <h1 className="font-heading-en mt-2 text-5xl font-bold drop-shadow-lg leading-tight">
+              Spring Well Presbyterian Church
             </h1>
 
-            <h2 className="mt-3 text-2xl font-semibold drop-shadow-sm">
+            {/* Subheading */}
+            <h2 className="font-subhead mt-3 text-2xl font-semibold drop-shadow-sm">
               English Ministry
             </h2>
-            <p className="mt-2 text-lg/7 italic">
+
+            {/* Tagline */}
+            <p className="font-subhead mt-2 text-lg/7 italic">
               A place of worship, community, and hope
             </p>
 
@@ -75,21 +82,22 @@ export default function Home() {
                 onClick={handleScrollToQuickInfo}
                 className="
                 inline-flex items-center gap-2
-                !rounded-full px-7 py-2.5
+                !rounded-full px-7 py-2
+                font-heading-en
                 bg-white text-[#116db5] border border-white
                 shadow-sm
                 transition-all duration-200
-                hover:bg-gray-100 hover:border-gray-100
+                hover:!bg-gray-100 hover:!border-gray-100
                 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#116db5]/40
               "
               >
-                Visit Us!
+                Learn More
               </button>
             </div>
           </div>
 
           {/* decorative cross on right side */}
-          <div className="mt-24 ml-28 opacity-10 z-0">
+          <div className="mt-48 ml-28 opacity-10 z-0">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 384 512"
@@ -132,7 +140,6 @@ export default function Home() {
           ${showTopBtn ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2 pointer-events-none"}
         `}
       >
-        {/* Double chevron up (stacked) */}
         <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden="true">
           <path d="M7.41 12.59 12 8l4.59 4.59L18 11.17 12 5l-6 6z" />
           <path d="M7.41 17.59 12 13l4.59 4.59L18 16.17 12 10l-6 6z" />
