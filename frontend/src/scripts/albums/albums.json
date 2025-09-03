@@ -1,0 +1,22 @@
+{
+  "albums": [
+    {
+      "name": "test-images",
+      "count": 1,
+      "items": [
+        {
+          "id": "27QKsaCqoKwqo8l1ihsGfG",
+          "title": "",
+          "album": "test-images",
+          "mediaUrls": [
+            "https://images.ctfassets.net/kgajkzbxa0pd/2cwfeFY8EARH1o9H7tMHvZ/8a75f9622185c8e18dcd98d7c5575abf/Longwood_Gardens-Italian_Garden.jpg"
+          ],
+          "createdAt": null,
+          "updatedAt": null
+        }
+      ]
+    }
+  ],
+  "totalItems": 1,
+  "albumCount": 1
+}

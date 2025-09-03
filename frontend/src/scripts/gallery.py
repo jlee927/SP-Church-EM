@@ -1,0 +1,59 @@
+# scripts/build_albums_json.py
+import os, json
+from dotenv import load_dotenv
+import contentful
+
+load_dotenv()
+SPACE_ID = os.getenv("CONTENTFUL_SPACE_ID")
+DELIVERY_TOKEN = os.getenv("CONTENTFUL_DELIVERY_TOKEN")
+client = contentful.Client(SPACE_ID, DELIVERY_TOKEN, environment="master")
+
+def _asset_url(a):
+    try:
+        return "https:" + a.url()
+    except Exception:
+        return None
+
+def fetch_all():
+    limit, skip, items = 1000, 0, []
+    while True:
+        page = client.entries({
+            "content_type": "gallery",
+            "order": "fields.category,-sys.createdAt",
+            "include": 1, "limit": limit, "skip": skip
+        })
+        items += list(page)
+        total = getattr(page, "total", len(page))
+        skip += limit
+        if skip >= total or len(page) == 0:
+            break
+    return items
+
+def build_payload(entries):
+    albums = {}
+    for e in entries:
+        album = getattr(e, "category", None) or "Uncategorized"
+        media = getattr(e, "media", None)
+        media_list = media if isinstance(media, list) else ([media] if media else [])
+        urls = [u for a in media_list if (u := _asset_url(a))]
+        item = {
+            "id": e.sys.get("id"),
+            "title": getattr(e, "title", ""),
+            "album": album,
+            "mediaUrls": urls,
+        }
+        albums.setdefault(album, []).append(item)
+
+    return {
+        "albums": [{"name": k, "count": len(v), "items": v} for k, v in albums.items()],
+        "totalItems": sum(len(v) for v in albums.values()),
+        "albumCount": len(albums),
+    }
+
+if __name__ == "__main__":
+    data = build_payload(fetch_all())
+    out_path = os.path.join( "albums", "albums.json")
+    os.makedirs(os.path.dirname(out_path), exist_ok=True)
+    with open(out_path, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+    print(f"Wrote {out_path}")
