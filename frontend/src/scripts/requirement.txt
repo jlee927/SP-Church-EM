@@ -1,0 +1,8 @@
+# Contentful Delivery SDK (what your code uses)
+contentful>=1.13,<2.0
+
+# For load_dotenv()
+python-dotenv>=1.0,<2.0
+
+# Contentful SDK rides on requests; pin a safe major
+requests>=2.31,<3.0
