@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint .",
-    "prebuild": "pip install -r src/scripts/requirements.txt || true && python3 src/scripts/update_events.py && python3 src/scripts/update_gallery.py"
+    "prebuild": "pip install -r src/scripts/requirements.txt || true && python3 src/scripts/events.py && python3 src/scripts/gallery.py"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.12",
