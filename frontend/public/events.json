@@ -1,0 +1,17 @@
+{
+  "events": [
+    {
+      "id": "P9fSuM7ak3jMSXivI25xo",
+      "title": "BBQ",
+      "start": "2025-09-07T05:00:00-05:00",
+      "startMonth": "September",
+      "startDay": 7,
+      "startYear": 2025,
+      "end": null,
+      "location": "Brads house",
+      "description": "We eat at their place"
+    }
+  ],
+  "totalItems": 1,
+  "generatedAt": "2025-09-04T21:30:41.685505+00:00"
+}

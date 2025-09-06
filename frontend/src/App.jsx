@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Connect from './pages/Connect';
 import Event from './pages/Event';
 import Gallery from './pages/Gallery';
+import AlbumView from "./pages/AlbumView.jsx";
 import Footer from './components/Footer';
 import About from './pages/About';
 import './index.css';
@@ -39,6 +40,7 @@ function Layout() {
           <Route path="/connect" element={<Connect />} />
           <Route path="/events" element={<Event />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/gallery/:albumSlug" element={<AlbumView />} />
           <Route path="/about" element={<About />} />
         </Routes>
       </main>

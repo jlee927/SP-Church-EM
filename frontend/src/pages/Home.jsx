@@ -1,10 +1,10 @@
-// Home.jsx
+// src/pages/Home.jsx
 import { useEffect, useState } from "react";
-import bg3 from "../assets/images/bg4.jpg"
-import forestbg from "../assets/images/forestbg.jpg"
-import AppNavbar from "../components/AppNavbar"
-import QuickInfo from "../components/QuickInfo"
-import VerseOfTheDay from "../components/VerseOfTheDay"
+import bg3 from "../assets/images/bg4.jpg";
+import forestbg from "../assets/images/forestbg.jpg";
+import AppNavbar from "../components/AppNavbar";
+import QuickInfo from "../components/QuickInfo";
+import VerseOfTheDay from "../components/VerseOfTheDay";
 
 export default function Home() {
   const [showTopBtn, setShowTopBtn] = useState(false);
@@ -32,7 +32,7 @@ export default function Home() {
 
   return (
     // Set Inter as default UI/body font
-    <div className="font-sans">
+    <div className="!font-sans">
       {/* HERO */}
       <section
         id="hero"
@@ -40,7 +40,6 @@ export default function Home() {
         style={{ backgroundImage: `url(${bg3})` }}
         aria-label="Spring Well Presbyterian Church hero"
       >
-
         {/* soft overlay for readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/10 to-white/0" />
 
@@ -51,28 +50,27 @@ export default function Home() {
             relative z-10
             mx-6 md:mx-24 lg:mx-36
             pt-32 md:pt-48 pb-24
-
-            text-[#116db5]
+            !text-[#116db5]
             max-w-3xl
           "
           >
             {/* Korean heading */}
-            <h1 className="font-heading-ko text-5xl font-bold drop-shadow-lg leading-tight">
+            <h1 className="!font-heading-ko !text-5xl !font-semi drop-shadow-lg leading-tight">
               생명샘 장로교회
             </h1>
 
             {/* English heading */}
-            <h1 className="font-heading-en mt-2 text-5xl font-bold drop-shadow-lg leading-tight">
+            <h1 className="!font-heading-en mt-2 !text-5xl !font-bold drop-shadow-lg leading-tight">
               Spring Well Presbyterian Church
             </h1>
 
             {/* Subheading */}
-            <h2 className="font-subhead mt-3 text-2xl font-semibold drop-shadow-sm">
+            <h2 className="!font-subhead mt-3 !text-2xl !font-semibold drop-shadow-sm">
               English Ministry
             </h2>
 
             {/* Tagline */}
-            <p className="font-subhead mt-2 text-lg/7 italic">
+            <p className="!font-subhead mt-2 !text-lg/7 italic">
               A place of worship, community, and hope
             </p>
 
@@ -83,8 +81,8 @@ export default function Home() {
                 className="
                 inline-flex items-center gap-2
                 !rounded-full px-7 py-2
-                font-heading-en
-                bg-white text-[#116db5] border border-white
+                !font-heading-en
+                bg-white !text-[#116db5] border border-white
                 shadow-sm
                 transition-all duration-200
                 hover:!bg-gray-100 hover:!border-gray-100
@@ -101,7 +99,7 @@ export default function Home() {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 384 512"
-              className="w-[200px] h-[200px] text-[#116db5] fill-current"
+              className="w-[200px] h-[200px] !text-[#116db5] fill-current"
             >
               <path d="M368 144H240V24c0-13.3-10.7-24-24-24h-48c-13.3 0-24 10.7-24 
               24v120H16c-8.8 0-16 7.2-16 16v64c0 8.8 7.2 16 16 
@@ -131,7 +129,7 @@ export default function Home() {
         className={`
           fixed bottom-6 right-6 z-50
           h-8 w-8 !rounded-md
-          bg-white text-[#116db5]
+          bg-white !text-[#116db5]
           shadow-lg ring-1 ring-slate-200
           flex items-center justify-center
           transition-all duration-300 ease-out
@@ -145,8 +143,6 @@ export default function Home() {
           <path d="M7.41 17.59 12 13l4.59 4.59L18 16.17 12 10l-6 6z" />
         </svg>
       </button>
-
     </div>
-  )
+  );
 }
-

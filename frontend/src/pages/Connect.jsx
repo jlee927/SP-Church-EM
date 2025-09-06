@@ -14,7 +14,6 @@ export default function Connect() {
   });
   const [errors, setErrors] = useState({});
 
-  // Adjust these for your church
   const CHURCH_EMAIL = "youremail@yourchurch.org";
   const CHURCH_ADDRESS = "1234 Main St, Your City, IL 60607";
 
@@ -37,7 +36,8 @@ export default function Connect() {
   };
 
   const handleChange = (key) => (ev) => {
-    const value = ev.target.type === "checkbox" ? ev.target.checked : ev.target.value;
+    const value =
+      ev.target.type === "checkbox" ? ev.target.checked : ev.target.value;
     setForm((f) => ({ ...f, [key]: value }));
   };
 
@@ -59,9 +59,9 @@ export default function Connect() {
       .filter(Boolean)
       .join("%0D%0A");
 
-    const mailto = `mailto:${encodeURIComponent(CHURCH_EMAIL)}?subject=${encodeURIComponent(
-      subject
-    )}&body=${bodyLines}`;
+    const mailto = `mailto:${encodeURIComponent(
+      CHURCH_EMAIL
+    )}?subject=${encodeURIComponent(subject)}&body=${bodyLines}`;
     window.location.href = mailto;
   };
 
@@ -74,12 +74,11 @@ export default function Connect() {
         style={{ backgroundImage: `url(${bg3})` }}
         aria-label="Connect with Springwell Presbyterian Church"
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/10 to-white/0" />
-        <div className="relative z-10 mx-6 md:mx-24 lg:mx-36 pt-32 md:pt-40 pb-12 text-[#116db5] max-w-3xl">
-          <h1 className="text-5xl font-bold drop-shadow-lg leading-tight font-heading-en">
+        <div className="relative mt-4 z-10 mx-6 md:mx-24 lg:mx-36 pt-32 md:pt-40 pb-12 !text-[#116db5] max-w-3xl">
+          <h1 className="!font-heading-en !text-5xl !font-bold drop-shadow-lg leading-tight">
             Connect
           </h1>
-          <p className="mt-2 text-lg text-[#0e5a96]/90">
+          <p className="mt-2 !font-subhead !text-lg !text-[#0e5a96]/90">
             We’d love to hear from you—questions, prayer requests, or just saying hello.
           </p>
         </div>
@@ -91,30 +90,30 @@ export default function Connect() {
         <div className="grid gap-8 md:grid-cols-2 mt-6">
           {/* Ministries */}
           <div className="rounded-2xl border border-slate-200/60 bg-white/95 shadow-sm p-8 md:p-10 leading-relaxed">
-            <h3 className="text-xl font-semibold text-[#116db5] tracking-tight mb-2">
+            <h3 className="!font-heading-en !text-xl !font-semibold !text-[#116db5] tracking-tight mb-2">
               Get Involved
             </h3>
-            <ul className="mt-3 space-y-1.5 text-slate-700 text-[15px]">
+            <ul className="mt-3 space-y-1.5 !font-sans !text-slate-700 !text-[15px]">
               <li>• Youth & Children’s Ministry</li>
               <li>• Adult Bible Study</li>
               <li>• Choir & Worship Team</li>
               <li>• Community Outreach</li>
             </ul>
-            <p className="mt-4 text-[14px] text-slate-600">
+            <p className="mt-4 !font-subhead !text-[14px] !text-slate-600">
               Discover ways to serve and grow with us.
             </p>
           </div>
 
           {/* Prayer */}
           <div className="rounded-2xl border border-slate-200/60 bg-white/95 shadow-sm p-8 md:p-10 leading-relaxed">
-            <h3 className="text-xl font-semibold text-[#116db5] tracking-tight mb-2">
+            <h3 className="!font-heading-en !text-xl !font-semibold !text-[#116db5] tracking-tight mb-2">
               Prayer Support
             </h3>
-            <p className="mt-3 text-slate-700 text-[15px] leading-relaxed">
+            <p className="mt-3 !font-sans !text-slate-700 !text-[15px] leading-relaxed">
               Our prayer team is here for you. Share your joys, concerns, or needs, and we
               will lift them up confidentially.
             </p>
-            <p className="mt-3 text-[13px] text-slate-500">
+            <p className="mt-3 !font-subhead !text-[13px] !text-slate-500">
               (Use the form below and check “This is a prayer request”)
             </p>
           </div>
@@ -124,54 +123,56 @@ export default function Connect() {
         <section className="mt-12 grid gap-8 lg:grid-cols-2">
           {/* Contact Form */}
           <div className="rounded-2xl border border-slate-200/60 bg-white/95 shadow-sm p-8 md:p-10">
-            <h2 className="text-2xl font-semibold text-[#116db5] tracking-tight">
+            <h2 className="!font-heading-en !text-2xl !font-semibold !text-[#116db5] tracking-tight">
               Email Us
             </h2>
-            <p className="text-slate-600 mt-1">
+            <p className="!font-subhead !text-slate-600 mt-1">
               Fill this out and we’ll get back to you soon.
             </p>
 
             <form className="mt-6 space-y-5" onSubmit={handleSubmit} noValidate>
               <div className="grid gap-5 md:grid-cols-2">
                 <div>
-                  <label className="block text-sm font-medium text-slate-700">
+                  <label className="block !text-sm !font-subhead !text-slate-700">
                     Name *
                   </label>
                   <input
                     type="text"
-                    className={`mt-1 w-full rounded-xl border px-3 py-2 outline-none focus:ring-2 focus:ring-sky-300 ${errors.name ? "border-red-400" : "border-slate-200"
-                      }`}
+                    className={`mt-1 w-full rounded-xl border px-3 py-2 outline-none focus:ring-2 focus:ring-sky-300 ${
+                      errors.name ? "border-red-400" : "border-slate-200"
+                    }`}
                     value={form.name}
                     onChange={handleChange("name")}
                     placeholder="Your full name"
                     required
                   />
                   {errors.name && (
-                    <p className="text-sm text-red-500 mt-1">{errors.name}</p>
+                    <p className="!text-sm !text-red-500 mt-1">{errors.name}</p>
                   )}
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-slate-700">
+                  <label className="block !text-sm !font-subhead !text-slate-700">
                     Email *
                   </label>
                   <input
                     type="email"
-                    className={`mt-1 w-full rounded-xl border px-3 py-2 outline-none focus:ring-2 focus:ring-sky-300 ${errors.email ? "border-red-400" : "border-slate-200"
-                      }`}
+                    className={`mt-1 w-full rounded-xl border px-3 py-2 outline-none focus:ring-2 focus:ring-sky-300 ${
+                      errors.email ? "border-red-400" : "border-slate-200"
+                    }`}
                     value={form.email}
                     onChange={handleChange("email")}
                     placeholder="you@example.com"
                     required
                   />
                   {errors.email && (
-                    <p className="text-sm text-red-500 mt-1">{errors.email}</p>
+                    <p className="!text-sm !text-red-500 mt-1">{errors.email}</p>
                   )}
                 </div>
               </div>
 
               <div className="grid gap-5 md:grid-cols-2">
                 <div>
-                  <label className="block text-sm font-medium text-slate-700">
+                  <label className="block !text-sm !font-subhead !text-slate-700">
                     Phone (optional)
                   </label>
                   <input
@@ -183,7 +184,7 @@ export default function Connect() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-slate-700">
+                  <label className="block !text-sm !font-subhead !text-slate-700">
                     Reason
                   </label>
                   <select
@@ -201,20 +202,21 @@ export default function Connect() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-slate-700">
+                <label className="block !text-sm !font-subhead !text-slate-700">
                   Message *
                 </label>
                 <textarea
                   rows={6}
-                  className={`mt-1 w-full rounded-xl border px-3 py-3 outline-none focus:ring-2 focus:ring-sky-300 ${errors.message ? "border-red-400" : "border-slate-200"
-                    }`}
+                  className={`mt-1 w-full rounded-xl border px-3 py-3 outline-none focus:ring-2 focus:ring-sky-300 ${
+                    errors.message ? "border-red-400" : "border-slate-200"
+                  }`}
                   value={form.message}
                   onChange={handleChange("message")}
                   placeholder="How can we help?"
                   required
                 />
                 {errors.message && (
-                  <p className="text-sm text-red-500 mt-1">{errors.message}</p>
+                  <p className="!text-sm !text-red-500 mt-1">{errors.message}</p>
                 )}
               </div>
 
@@ -226,9 +228,9 @@ export default function Connect() {
                   onChange={handleChange("prayerRequest")}
                   className="mt-1 h-5 w-5 rounded border-gray-300"
                 />
-                <label htmlFor="prayerRequest" className="text-sm text-slate-700">
+                <label htmlFor="prayerRequest" className="!text-sm !font-subhead !text-slate-700">
                   This is a prayer request.
-                  <span className="block text-slate-500 text-xs">
+                  <span className="block !font-sans !text-slate-500 !text-xs">
                     Our team will keep your request confidential.
                   </span>
                 </label>
@@ -242,31 +244,31 @@ export default function Connect() {
                   onChange={handleChange("consent")}
                   className="mt-1 h-5 w-5 rounded border-gray-300"
                 />
-                <label htmlFor="consent" className="text-sm text-slate-700">
+                <label htmlFor="consent" className="!text-sm !font-subhead !text-slate-700">
                   I understand this will open my email app to send the message.
                 </label>
               </div>
               {errors.consent && (
-                <p className="text-sm text-red-500 -mt-2">{errors.consent}</p>
+                <p className="!text-sm !text-red-500 -mt-2">{errors.consent}</p>
               )}
 
               <div className="pt-1">
                 <button
                   type="submit"
-                  className="rounded-full bg-[#116db5] text-white px-6 py-2.5 font-medium shadow-sm hover:opacity-90 transition"
+                  className="rounded-full bg-[#116db5] !text-white px-6 py-2.5 !font-heading-en shadow-sm hover:opacity-90 transition"
                 >
                   Send Email
                 </button>
               </div>
 
-              <p className="text-xs text-slate-500">
+              <p className="!text-xs !font-sans !text-slate-500">
                 Tip: Want this to send without opening an email app? Hook this form up to
                 Formspree, Netlify Forms, or your API later—no UI changes needed.
               </p>
             </form>
           </div>
 
-          {/* Big Map / Directions */}
+          {/* Map */}
           <div className="rounded-2xl border border-slate-200/60 bg-white/95 shadow-sm p-4 md:p-5">
             <div className="overflow-hidden rounded-xl h-[320px] md:h-[420px] w-full">
               <iframe
@@ -283,4 +285,3 @@ export default function Connect() {
     </div>
   );
 }
-

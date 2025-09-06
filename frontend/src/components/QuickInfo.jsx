@@ -3,14 +3,14 @@ export default function QuickInfo() {
     "relative rounded-2xl bg-white/60 md:bg-white/65 backdrop-blur-md " +
     "ring-1 ring-white/55 shadow-[0_14px_30px_-12px_rgba(17,109,181,0.20)] " +
     "transition-all duration-300 hover:shadow-[0_18px_42px_-12px_rgba(17,109,181,0.30)] hover:-translate-y-0.5 " +
-    "hover:ring-1 hover:ring-[#116db5]/15";
+    "hover:!ring-1 hover:!ring-[#116db5]/15";
 
   const iconWrap =
     "inline-flex h-10 w-10 items-center justify-center rounded-full " +
     "bg-[#116db5]/12 ring-1 ring-[#116db5]/20 shadow-[0_0_0_3px_rgba(17,109,181,0.06)]";
 
   return (
-    <section className="relative py-14 md:py-16 font-sans">
+    <section className="relative py-14 md:py-16 !font-sans">
       {/* soft sky wash behind cards so they feel connected to the hero clouds */}
       <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-sky-50/60 via-white/70 to-white" />
 
@@ -26,16 +26,16 @@ export default function QuickInfo() {
 
       <div className="mx-auto max-w-6xl px-6 md:px-10">
         <div className="text-left md:text-center">
-          {/* Title: Merriweather */}
-          <h2 className="font-heading-en text-4xl md:text-5xl font-bold leading-tight text-[#116db5] tracking-[-0.01em]">
+          {/* Title */}
+          <h2 className="!font-heading-en !text-4xl md:!text-5xl !font-bold leading-tight !text-[#116db5] tracking-[-0.01em]">
             Join Us This Sunday
           </h2>
-          {/* Subtitle: Lora */}
-          <p className="font-subhead mt-2 text-base md:text-lg text-[#0e5a96]/85 tracking-[0.01em]">
+          {/* Subtitle */}
+          <p className="!font-subhead mt-2 !text-base md:!text-lg !text-[#0e5a96]/85 tracking-[0.01em]">
             A welcoming community of worship, connection, and hope
           </p>
-          {/* Scripture: Lora italic */}
-          <p className="font-subhead mt-1 text-sm md:text-[0.95rem] italic text-[#0e5a96]/60 max-w-xl md:mx-auto">
+          {/* Scripture */}
+          <p className="!font-subhead mt-1 !text-sm md:!text-[0.95rem] italic !text-[#0e5a96]/60 max-w-xl md:mx-auto">
             “Let us not give up meeting together…” — Hebrews 10:25
           </p>
         </div>
@@ -47,32 +47,30 @@ export default function QuickInfo() {
             <div className="relative z-10 p-5 md:p-6">
               <div className="flex items-center gap-3">
                 <span className={iconWrap}>
-                  {/* church bell icon */}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
-                    className="h-5 w-5 text-[#116db5]"
+                    className="h-5 w-5 !text-[#116db5]"
                   >
                     <path d="M18 8a6 6 0 10-12 0c0 7-3 7-3 7h18s-3 0-3-7" />
                     <path d="M13.73 21a2 2 0 01-3.46 0" />
                   </svg>
                 </span>
-                {/* Card heading: Merriweather */}
-                <h3 className="font-heading-en pt-2.5 text-xl md:text-2xl font-semibold tracking-[-0.005em] text-[#0e5a96]">
+                <h3 className="!font-heading-en pt-2.5 !text-xl md:!text-2xl !font-semibold tracking-[-0.005em] !text-[#0e5a96]">
                   Service Times
                 </h3>
               </div>
-              <div className="mt-4 space-y-1 text-[#334155]">
-                <p className="font-medium">Sundays · 1:00 PM</p>
+              <div className="mt-4 space-y-1 !text-[#334155]">
+                <p className="!font-medium">Sundays · 1:00 PM</p>
                 <p>Friday Prayer · 7:30 PM</p>
               </div>
             </div>
           </div>
 
-          {/* Location + Embedded Map */}
+          {/* Location */}
           <div className={cardBase}>
             <div className="relative z-10 p-5 md:p-6">
               <div className="flex items-center gap-3">
@@ -83,22 +81,21 @@ export default function QuickInfo() {
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
-                    className="h-5 w-5 text-[#116db5]"
+                    className="h-5 w-5 !text-[#116db5]"
                   >
                     <path d="M12 21s-6-5.686-6-10a6 6 0 1 1 12 0c0 4.314-6 10-6 10Z" />
                     <path d="M12 8v6M9 11h6" />
                   </svg>
                 </span>
-                <h3 className="font-heading-en pt-2.5 text-xl md:text-2xl font-semibold tracking-[-0.005em] text-[#0e5a96]">
+                <h3 className="!font-heading-en pt-2.5 !text-xl md:!text-2xl !font-semibold tracking-[-0.005em] !text-[#0e5a96]">
                   Location
                 </h3>
               </div>
-              <div className="mt-3 text-[#334155]">
-                <p className="font-medium">2025 S Goebbert Rd</p>
+              <div className="mt-3 !text-[#334155]">
+                <p className="!font-medium">2025 S Goebbert Rd</p>
                 <p>Arlington Heights, IL 60005</p>
               </div>
 
-              {/* map */}
               <div className="mt-4 overflow-hidden rounded-xl ring-1 ring-black/5">
                 <div className="relative w-full aspect-video">
                   <iframe
@@ -118,24 +115,23 @@ export default function QuickInfo() {
             <div className="relative z-10 p-5 md:p-6">
               <div className="flex items-center gap-3">
                 <span className={iconWrap}>
-                  {/* dove/fellowship icon */}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
-                    className="h-5 w-5 text-[#116db5]"
+                    className="h-5 w-5 !text-[#116db5]"
                   >
                     <path d="M3 20c3-5 7-7 11-7" />
                     <path d="M14 13c0 3 2 5 7 5-3 2-6 3-9 3a9 9 0 01-9-9 9 9 0 019-9c-2 2-2 4-2 6" />
                   </svg>
                 </span>
-                <h3 className="font-heading-en pt-2.5 text-xl md:text-2xl font-semibold tracking-[-0.005em] text-[#0e5a96]">
+                <h3 className="!font-heading-en pt-2.5 !text-xl md:!text-2xl !font-semibold tracking-[-0.005em] !text-[#0e5a96]">
                   New Here?
                 </h3>
               </div>
-              <p className="mt-3 text-[#334155]">
+              <p className="mt-3 !text-[#334155] !font-sans">
                 We’d love to welcome you. Let us know you’re coming and we’ll help you get connected.
               </p>
             </div>
@@ -148,4 +144,3 @@ export default function QuickInfo() {
     </section>
   );
 }
-

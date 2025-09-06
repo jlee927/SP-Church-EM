@@ -1,5 +1,6 @@
 # scripts/build_albums_json.py
 import os, json
+from pathlib import Path
 from dotenv import load_dotenv
 import contentful
 
@@ -52,8 +53,13 @@ def build_payload(entries):
 
 if __name__ == "__main__":
     data = build_payload(fetch_all())
-    out_path = os.path.join( "albums", "albums.json")
-    os.makedirs(os.path.dirname(out_path), exist_ok=True)
-    with open(out_path, "w", encoding="utf-8") as f:
+
+    # Resolve project root from *this file’s* path:
+    PROJECT_ROOT = Path(__file__).resolve().parents[2]   # repo root if script is in /scripts
+    # Write to <repo>/frontend/public/albums.json
+    out_path = PROJECT_ROOT / "public" / "albums.json"
+
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    with out_path.open("w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
     print(f"Wrote {out_path}")
