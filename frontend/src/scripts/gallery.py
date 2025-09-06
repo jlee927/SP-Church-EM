@@ -1,6 +1,10 @@
 # scripts/build_albums_json.py
-import os, json
+# frontend/src/scripts/events.py
+import sys
 from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "python_modules"))
+
+import os, json
 from dotenv import load_dotenv
 import contentful
 

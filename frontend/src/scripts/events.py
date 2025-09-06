@@ -1,6 +1,8 @@
 # frontend/src/scripts/events.py
-import os, json
+import sys
 from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "python_modules"))
+import os, json
 from datetime import datetime, timezone
 from dotenv import load_dotenv
 import contentful
