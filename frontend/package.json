@@ -5,10 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "python3 src/scripts/events.py && python3 src/scripts/gallery.py",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint .",
-    "prebuild": "pip install -r src/scripts/requirements.txt || true && python3 src/scripts/events.py && python3 src/scripts/gallery.py"
+    "lint": "eslint ."
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.12",
