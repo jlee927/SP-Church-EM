@@ -323,7 +323,7 @@ export default function Event() {
           <h3 className="!font-heading-en !text-2xl md:!text-3xl !font-semibold !text-gray-900 mt-14 mb-6">
             Latest Past Events
           </h3>
-          <div className="mt-4">
+          <div>
             {past.length === 0 ? (
               <p className="!text-gray-600">No past events.</p>
             ) : (

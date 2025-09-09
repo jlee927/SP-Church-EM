@@ -52,7 +52,12 @@ export default function Gallery() {
       {/* Album banners */}
       <div className="max-w-7xl mx-auto mt-10 px-4 md:px-8 space-y-6">
         {filtered.map((album) => {
-          const cover = album.items?.[0]?.mediaUrls?.[0] || "/default-banner.jpg"; // fallback
+          const firstItem = album.items?.[0];
+          const cover =
+            firstItem?.cover ||
+            firstItem?.photos?.[0] ||
+            "/default-banner.jpg"; // fallback for safety
+
           const slug = slugify(album.name);
           return (
             <Link
@@ -83,3 +88,4 @@ export default function Gallery() {
     </div>
   );
 }
+

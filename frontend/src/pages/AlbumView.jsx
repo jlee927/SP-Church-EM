@@ -22,18 +22,31 @@ export default function AlbumView() {
     return (data.albums || []).find((a) => slugify(a.name) === albumSlug) || null;
   }, [data, albumSlug]);
 
+  // Flatten photos from items (fallback to assets[].url if photos not present)
+  const photos = useMemo(() => {
+    if (!album?.items?.length) return [];
+    return album.items.flatMap((it) => {
+      const urls = (it.photos && it.photos.length ? it.photos : (it.assets || []).map(a => a.url)) || [];
+      return urls.map((url, idx) => ({
+        id: `${it.id}-${idx}`,
+        url,
+        title: it.title || album.name
+      }));
+    });
+  }, [album]);
+
   // Close / navigate lightbox with keyboard
   useEffect(() => {
     const onKey = (e) => {
       if (lightboxIndex === null) return;
       if (e.key === "Escape") setLightboxIndex(null);
-      if (!album?.items?.length) return;
-      if (e.key === "ArrowRight") setLightboxIndex((i) => (i + 1) % album.items.length);
-      if (e.key === "ArrowLeft") setLightboxIndex((i) => (i - 1 + album.items.length) % album.items.length);
+      if (!photos.length) return;
+      if (e.key === "ArrowRight") setLightboxIndex((i) => (i + 1) % photos.length);
+      if (e.key === "ArrowLeft") setLightboxIndex((i) => (i - 1 + photos.length) % photos.length);
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [lightboxIndex, album]);
+  }, [lightboxIndex, photos]);
 
   if (!data) {
     return <div className="p-6 text-[#0e5a96]">Loading…</div>;
@@ -53,15 +66,15 @@ export default function AlbumView() {
 
   const next = (e) => {
     e.stopPropagation();
-    setLightboxIndex((i) => (i + 1) % album.items.length);
+    setLightboxIndex((i) => (i + 1) % photos.length);
   };
   const prev = (e) => {
     e.stopPropagation();
-    setLightboxIndex((i) => (i - 1 + album.items.length) % album.items.length);
+    setLightboxIndex((i) => (i - 1 + photos.length) % photos.length);
   };
 
   const currentUrl =
-    lightboxIndex !== null ? album.items[lightboxIndex]?.mediaUrls?.[0] : null;
+    lightboxIndex !== null ? photos[lightboxIndex]?.url : null;
 
   return (
     <div className="bg-min-h-screen pt-36 text-[#0e5a96]">
@@ -74,33 +87,30 @@ export default function AlbumView() {
           ← Back to Albums
         </Link>
         <h1 className="mt-4 text-3xl font-bold text-[#116db5]">{album.name}</h1>
-        <p className="text-sm text-[#0e5a96]/70">{album.count} item(s)</p>
+        <p className="text-sm text-[#0e5a96]/70">{photos.length} item(s)</p>
       </div>
 
       {/* Grid */}
       <div className="max-w-7xl mx-auto mt-6 px-4 md:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {album.items.map((item, idx) => {
-            const url = item.mediaUrls?.[0];
-            return (
-              <button
-                key={item.id}
-                onClick={() => url && openLightbox(idx)}
-                className="relative group overflow-hidden rounded-2xl shadow-sm hover:shadow-lg transition text-left"
-                title={item.title || album.name}
-              >
-                <img
-                  src={url || "/placeholder.png"}
-                  alt={item.title || album.name}
-                  className="w-full h-56 object-cover"
-                />
-                <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/40 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 p-3 text-white">
-                  <h3 className="font-semibold text-sm">{item.title || "Untitled"}</h3>
-                </div>
-              </button>
-            );
-          })}
+          {photos.map((p, idx) => (
+            <button
+              key={p.id || p.url}
+              onClick={() => p.url && openLightbox(idx)}
+              className="relative group overflow-hidden rounded-2xl shadow-sm hover:shadow-lg transition text-left"
+              title={p.title || album.name}
+            >
+              <img
+                src={p.url || "/placeholder.png"}
+                alt={p.title || album.name}
+                className="w-full h-56 object-cover"
+              />
+              <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/40 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-3 text-white">
+                <h3 className="font-semibold text-sm">{p.title || "Untitled"}</h3>
+              </div>
+            </button>
+          ))}
         </div>
       </div>
 
@@ -153,3 +163,4 @@ export default function AlbumView() {
     </div>
   );
 }
+
