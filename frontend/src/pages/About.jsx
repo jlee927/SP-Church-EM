@@ -74,7 +74,7 @@ export default function About() {
           Our Community
         </h2>
 
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="grid mt-4 gap-8 md:grid-cols-3">
           {/* Example leader/member card */}
           <div className="bg-white shadow-md rounded-2xl p-6 text-center border border-gray-100">
             <img
@@ -95,13 +95,14 @@ export default function About() {
               className="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-4"
             />
             <h3 className="!text-xl !font-semibold !font-heading-en">Danny-San Park</h3>
-            <p className="!text-gray-500 !font-sans">Prez</p>
+            <p className="!text-gray-500 !font-sans">President</p>
           </div>
 
           <div className="bg-white shadow-md rounded-2xl p-6 text-center border border-gray-100">
             <div className="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-4" />
-            <h3 className="!text-xl !font-semibold !font-heading-en"></h3>
+            <h3 className="!text-xl !font-semibold !font-heading-en">Grace Park</h3>
             <p className="!text-gray-500 !font-sans">Worship Leader</p>
+
           </div>
         </div>
       </section>

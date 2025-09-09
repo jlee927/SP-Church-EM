@@ -7,6 +7,7 @@ import Gallery from './pages/Gallery';
 import AlbumView from "./pages/AlbumView.jsx";
 import Footer from './components/Footer';
 import About from './pages/About';
+import Offerings from './pages/Offerings.jsx';
 import './index.css';
 
 import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
@@ -39,6 +40,7 @@ function Layout() {
           <Route path="/" element={<Home />} />
           <Route path="/connect" element={<Connect />} />
           <Route path="/events" element={<Event />} />
+          <Route path="/giving" element={<Offerings />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/gallery/:albumSlug" element={<AlbumView />} />
           <Route path="/about" element={<About />} />

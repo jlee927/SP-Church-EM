@@ -39,7 +39,6 @@ export default function AppNavbar() {
             { to: "/about", label: "About" },
             { to: "/connect", label: "Connect" },
             { to: "/events", label: "Events" },
-            { to: "/giving", label: "Giving" },
             { to: "/gallery", label: "Gallery" },
           ].map((link) => (
             <NavLink

@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
+import bgHero from "../assets/images/bg4.jpg";
 
 function slugify(str = "") {
   return str.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)+/g, "");
@@ -27,16 +28,18 @@ export default function Gallery() {
   return (
     <div className="bg-min-h-screen text-[#0e5a96]">
       {/* Hero */}
-      <section className="relative h-[32vh] bg-cover bg-center flex items-center justify-center">
+      <section className="relative h-[50vh] bg-cover bg-center flex items-center "
+        style={{ backgroundImage: `url(${bgHero})` }}
+      >
         <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-white/0" />
-        <div className="relative z-10 text-center">
-          <h1 className="text-5xl font-bold text-[#116db5] drop-shadow-md">Gallery 갤러리</h1>
-          <p className="mt-2 text-base md:text-lg text-[#0e5a96]/80">Browse albums</p>
+        <div className="mt-12 relative z-10 text-center mx-6 md:mx-24 lg:mx-36">
+          <h1 className="text-5xl font-bold text-[#116db5] drop-shadow-md">Gallery</h1>
+          <p>Browse Album</p>
         </div>
       </section>
 
       {/* Search */}
-      <div className="max-w-4xl mx-auto -mt-10 bg-white/55 backdrop-blur-md ring-1 ring-white/40 shadow-sm rounded-2xl px-4 md:px-6 py-4 flex items-center justify-between gap-3">
+      <div className="max-w-full mx-6 md:mx-24 lg:mx-36 -mt-10 bg-gray-50 backdrop-blur-md ring-1 ring-white/40 shadow-sm rounded-2xl px-4 md:px-6 py-4 flex items-center justify-between gap-3">
         <input
           value={q}
           onChange={(e) => setParams(e.target.value ? { q: e.target.value } : {})}

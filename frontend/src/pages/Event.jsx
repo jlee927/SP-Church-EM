@@ -188,7 +188,7 @@ export default function Event() {
       </section>
 
       {/* Search + button + view toggles */}
-      <section className="mx-6 md:mx-24 lg:mx-36 mt-6">
+      <section className="h-[50vh] mx-6 md:mx-24 lg:mx-36 mt-6">
         <div className="flex flex-col md:flex-row md:items-center gap-3">
           <div className="flex-1 flex gap-2">
             <input
@@ -198,7 +198,7 @@ export default function Event() {
               className="w-full rounded-md border border-gray-200 px-4 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-sky-300"
             />
             <button
-              onClick={() => {}}
+              onClick={() => { }}
               className="shrink-0 rounded-md px-4 py-2 bg-[#116db5] !text-white hover:opacity-95"
             >
               Find Events
@@ -208,29 +208,45 @@ export default function Event() {
           <div className="flex items-center gap-4 !text-[#0e5a96] !font-subhead">
             <button
               onClick={() => setView("list")}
-              className={`underline-offset-4 ${
-                view === "list" ? "!font-semibold underline" : "hover:underline"
-              }`}
+              className={`underline-offset-4 ${view === "list" ? "!font-semibold underline" : "hover:underline"
+                }`}
             >
               List
             </button>
             <button
               onClick={() => setView("month")}
-              className={`underline-offset-4 ${
-                view === "month" ? "!font-semibold underline" : "hover:underline"
-              }`}
+              className={`underline-offset-4 ${view === "month" ? "!font-semibold underline" : "hover:underline"
+                }`}
             >
               Month
             </button>
             <button
               onClick={() => setView("day")}
-              className={`underline-offset-4 ${
-                view === "day" ? "!font-semibold underline" : "hover:underline"
-              }`}
+              className={`underline-offset-4 ${view === "day" ? "!font-semibold underline" : "hover:underline"
+                }`}
             >
               Day
             </button>
           </div>
+        </div>
+        <div className="flex flex-col">
+          <h3 className="!font-heading-en !text-2xl md:!text-3xl !font-semibold !text-gray-900 !mt-8">
+            Upcoming Events
+          </h3>
+          <div className="mt-4">
+            {upcoming.length === 0 ? (
+              <p className="text-center !text-gray-600 my-14">There are no upcoming events.</p>
+            ) : (
+              <div className="space-y-6">
+                {upcoming.map((e) => (
+                  <ListRow key={e.id} event={e} accent />
+                ))}
+              </div>
+            )}
+
+
+          </div>
+
         </div>
       </section>
 
@@ -304,29 +320,20 @@ export default function Event() {
       {/* ---- Views ---- */}
       {view === "list" && (
         <section className="mx-6 md:mx-24 lg:mx-36 mt-10">
-          <h2 className="sr-only">Upcoming Events</h2>
-          {upcoming.length === 0 ? (
-            <p className="text-center !text-gray-600 my-14">There are no upcoming events.</p>
-          ) : (
-            <div className="space-y-6">
-              {upcoming.map((e) => (
-                <ListRow key={e.id} event={e} accent />
-              ))}
-            </div>
-          )}
-
           <h3 className="!font-heading-en !text-2xl md:!text-3xl !font-semibold !text-gray-900 mt-14 mb-6">
             Latest Past Events
           </h3>
-          {past.length === 0 ? (
-            <p className="!text-gray-600">No past events.</p>
-          ) : (
-            <div className="space-y-6">
-              {past.slice(0, 12).map((e) => (
-                <ListRow key={e.id} event={e} />
-              ))}
-            </div>
-          )}
+          <div className="mt-4">
+            {past.length === 0 ? (
+              <p className="!text-gray-600">No past events.</p>
+            ) : (
+              <div className="space-y-6">
+                {past.slice(0, 12).map((e) => (
+                  <ListRow key={e.id} event={e} />
+                ))}
+              </div>
+            )}
+          </div>
         </section>
       )}
 
@@ -344,16 +351,14 @@ export default function Event() {
             {monthGrid.map(({ date, events, inMonth }, i) => (
               <div
                 key={i}
-                className={`min-h-[90px] border-t border-r last:border-r-0 border-gray-200 p-2 ${
-                  inMonth ? "bg-white" : "bg-gray-50"
-                }`}
+                className={`min-h-[90px] border-t border-r last:border-r-0 border-gray-200 p-2 ${inMonth ? "bg-white" : "bg-gray-50"
+                  }`}
               >
                 <div
-                  className={`!text-xs mb-1 ${
-                    sameDay(date, now)
-                      ? "inline-block px-2 py-0.5 rounded-full bg-sky-100 !text-[#0e5a96]"
-                      : "!text-gray-700"
-                  }`}
+                  className={`!text-xs mb-1 ${sameDay(date, now)
+                    ? "inline-block px-2 py-0.5 rounded-full bg-sky-100 !text-[#0e5a96]"
+                    : "!text-gray-700"
+                    }`}
                 >
                   {fmtDateNum.format(date)}
                 </div>
@@ -427,8 +432,8 @@ function ListRow({ event, accent = false }) {
       {/* Right content with photo background */}
       <div className="relative rounded-2xl border border-sky-200 overflow-hidden shadow-sm">
         <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${forestbg})` }}
+          className="absolute inset-0 bg-cover bg-center bg-blue-50"
+          /*style={{ backgroundImage: `url(${forestbg})` }}*/
           aria-hidden="true"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-white/75 via-white/65 to-sky-50/50 backdrop-blur-[1px]" />

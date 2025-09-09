@@ -72,6 +72,7 @@ export default function Connect() {
         id="connect-hero"
         className="relative min-h-[50vh] bg-cover bg-top flex flex-col"
         style={{ backgroundImage: `url(${bg3})` }}
+
         aria-label="Connect with Springwell Presbyterian Church"
       >
         <div className="relative mt-4 z-10 mx-6 md:mx-24 lg:mx-36 pt-32 md:pt-40 pb-12 !text-[#116db5] max-w-3xl">
@@ -94,7 +95,7 @@ export default function Connect() {
               Get Involved
             </h3>
             <ul className="mt-3 space-y-1.5 !font-sans !text-slate-700 !text-[15px]">
-              <li>• Youth & Children’s Ministry</li>
+              {/*<li>• Youth & Children’s Ministry</li>*/}
               <li>• Adult Bible Study</li>
               <li>• Choir & Worship Team</li>
               <li>• Community Outreach</li>
@@ -138,9 +139,8 @@ export default function Connect() {
                   </label>
                   <input
                     type="text"
-                    className={`mt-1 w-full rounded-xl border px-3 py-2 outline-none focus:ring-2 focus:ring-sky-300 ${
-                      errors.name ? "border-red-400" : "border-slate-200"
-                    }`}
+                    className={`mt-1 w-full rounded-xl border px-3 py-2 outline-none focus:ring-2 focus:ring-sky-300 ${errors.name ? "border-red-400" : "border-slate-200"
+                      }`}
                     value={form.name}
                     onChange={handleChange("name")}
                     placeholder="Your full name"
@@ -156,9 +156,8 @@ export default function Connect() {
                   </label>
                   <input
                     type="email"
-                    className={`mt-1 w-full rounded-xl border px-3 py-2 outline-none focus:ring-2 focus:ring-sky-300 ${
-                      errors.email ? "border-red-400" : "border-slate-200"
-                    }`}
+                    className={`mt-1 w-full rounded-xl border px-3 py-2 outline-none focus:ring-2 focus:ring-sky-300 ${errors.email ? "border-red-400" : "border-slate-200"
+                      }`}
                     value={form.email}
                     onChange={handleChange("email")}
                     placeholder="you@example.com"
@@ -207,9 +206,8 @@ export default function Connect() {
                 </label>
                 <textarea
                   rows={6}
-                  className={`mt-1 w-full rounded-xl border px-3 py-3 outline-none focus:ring-2 focus:ring-sky-300 ${
-                    errors.message ? "border-red-400" : "border-slate-200"
-                  }`}
+                  className={`mt-1 w-full rounded-xl border px-3 py-3 outline-none focus:ring-2 focus:ring-sky-300 ${errors.message ? "border-red-400" : "border-slate-200"
+                    }`}
                   value={form.message}
                   onChange={handleChange("message")}
                   placeholder="How can we help?"
