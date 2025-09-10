@@ -70,64 +70,48 @@ export default function About() {
       </section>
 
       {/* LEADERSHIP / COMMUNITY */}
-      {/* LEADERSHIP / COMMUNITY */}
       <section className="max-w-6xl mx-auto px-6 py-16">
-        <h2 className="!text-3xl !font-bold !text-[#116db5] text-center !font-heading-en">
+        <h2 className="!text-3xl !font-bold !text-[#116db5] text-center mb-12 !font-heading-en">
           Our Community
         </h2>
-        <p className="mt-3 text-center text-sm text-gray-600 !font-sans">
-          Meet the people who help guide and serve our church family.
-        </p>
 
-        <div className="grid mt-8 gap-6 sm:grid-cols-2 md:grid-cols-3 items-stretch">
+        <div className="grid mt-4 gap-8 md:grid-cols-3">
           {/* Example leader/member card */}
-          <div className="bg-white rounded-2xl p-6 text-center border border-gray-100 shadow-md
-                    ring-1 ring-gray-100 transition-all duration-200 ease-out
-                    hover:-translate-y-1 hover:shadow-xl hover:ring-[#116db5]/30
-                    focus-within:ring-2 focus-within:ring-[#116db5]/40
-                    flex flex-col items-center h-full">
+          <div className="bg-white shadow-md rounded-2xl p-6 text-center border border-gray-100">
             <img
               src={lols}
-              alt="Wha-Shin Park portrait"
-              className="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-4 ring-2 ring-white shadow"
+              alt="Leader"
+              className="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-4"
             />
-            <h3 className="!text-xl !font-semibold !font-heading-en">Wha-Shin Park</h3>
-            <span className="mt-1 h-0.5 w-8 bg-gray-200 rounded-full" />
-            <p className="mt-2 !text-gray-500 !font-sans">Head Pastor</p>
+            <h3 className="!text-xl !font-semibold !font-heading-en">
+              Wha-Shin Park
+
+            </h3>
+            <p className="!text-gray-500 !font-sans">Head Pastor</p>
           </div>
 
-          <div className="bg-white rounded-2xl p-6 text-center border border-gray-100 shadow-md
-                    ring-1 ring-gray-100 transition-all duration-200 ease-out
-                    hover:-translate-y-1 hover:shadow-xl hover:ring-[#116db5]/30
-                    focus-within:ring-2 focus-within:ring-[#116db5]/40
-                    flex flex-col items-center h-full">
+          <div className="bg-white shadow-md rounded-2xl p-6 text-center border border-gray-100">
             <img
               src={elmo}
-              alt="Danny Park portrait"
-              className="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-4 ring-2 ring-white shadow"
+              alt="Leader"
+              className="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-4"
             />
             <h3 className="!text-xl !font-semibold !font-heading-en">Danny Park</h3>
-            <span className="mt-1 h-0.5 w-8 bg-gray-200 rounded-full" />
-            <p className="mt-2 !text-gray-500 !font-sans">President</p>
+            <p className="!text-gray-500 !font-sans">President</p>
           </div>
 
-          <div className="bg-white rounded-2xl p-6 text-center border border-gray-100 shadow-md
-                    ring-1 ring-gray-100 transition-all duration-200 ease-out
-                    hover:-translate-y-1 hover:shadow-xl hover:ring-[#116db5]/30
-                    focus-within:ring-2 focus-within:ring-[#116db5]/40
-                    flex flex-col items-center h-full">
+          <div className="bg-white shadow-md rounded-2xl p-6 text-center border border-gray-100">
             <img
               src={kermit}
-              alt="Grace Park portrait"
-              className="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-4 ring-2 ring-white shadow"
+              alt="Leader"
+              className="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-4"
             />
             <h3 className="!text-xl !font-semibold !font-heading-en">Grace Park</h3>
-            <span className="mt-1 h-0.5 w-8 bg-gray-200 rounded-full" />
-            <p className="mt-2 !text-gray-500 !font-sans">Worship Leader</p>
+            <p className="!text-gray-500 !font-sans">Worship Leader</p>
+
           </div>
         </div>
       </section>
-
 
       {/* FLOATING BACK-TO-TOP BUTTON */}
       <button

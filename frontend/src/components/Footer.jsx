@@ -1,7 +1,7 @@
 import logo from "../assets/logo2.png"
 export default function Footer() {
   return (
-    <footer className="relative mt-20 bg-gradient-to-b from-white via-sky-50/80 to-sky-100 text-[#0e5a96]">
+    <footer className="relative mt-32 bg-gradient-to-b from-white via-sky-50/80 to-sky-100 text-[#0e5a96]">
       {/* wave divider */}
       <div className="pointer-events-none absolute inset-x-0 -top-8 h-4">
         <svg viewBox="0 0 1440 80" className="h-full w-full fill-white">

@@ -1,4 +1,3 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import AppNavbar from "./components/AppNavbar";
 import Home from "./pages/Home";
 import Connect from './pages/Connect';

@@ -1,5 +1,5 @@
 // src/pages/Offerings.tsx
-import bgHero from "../assets/images/bg5.jpg"; // <- replace or point to your existing hero image
+import bgHero from "../assets/images/bg4.jpg"; // <- replace or point to your existing hero image
 import { useState } from "react";
 
 export default function Offerings() {

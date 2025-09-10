@@ -8,12 +8,11 @@
           "id": "3hHEFviZ0PtBQVuPFYLNXs",
           "title": "Fellowship",
           "album": "Fellowship",
-          "cover": "https://images.ctfassets.net/kgajkzbxa0pd/2OjTF17SIQKyc99162K4g9/8c7f7b26c0fc1e771ad2291d185d44fb/Top_of_Atmosphere.jpg",
+          "cover": "https://images.ctfassets.net/kgajkzbxa0pd/2HaybI26mo0k5K7KHqr18S/464f5ed8288d620db472dd8a632c491d/IMG_4651.JPG",
           "photos": [
             "https://images.ctfassets.net/kgajkzbxa0pd/3w5Wm9cdheqF1XPvnoWuHn/3dae330ad65bb580d760e3744a6ecb5a/IMG_4650.JPG",
-            "https://images.ctfassets.net/kgajkzbxa0pd/2cwfeFY8EARH1o9H7tMHvZ/8a75f9622185c8e18dcd98d7c5575abf/Longwood_Gardens-Italian_Garden.jpg",
-            "https://images.ctfassets.net/kgajkzbxa0pd/2OjTF17SIQKyc99162K4g9/8c7f7b26c0fc1e771ad2291d185d44fb/Top_of_Atmosphere.jpg",
-            "https://images.ctfassets.net/kgajkzbxa0pd/1h4NF574aI7yr0RGPyxmnZ/106ed52a2004ac6c56600162b7f3a52a/IMG_4649.JPG"
+            "https://images.ctfassets.net/kgajkzbxa0pd/1h4NF574aI7yr0RGPyxmnZ/106ed52a2004ac6c56600162b7f3a52a/IMG_4649.JPG",
+            "https://images.ctfassets.net/kgajkzbxa0pd/FXi0cmGso7Oa1XuRi6rx9/9952b24b618c104a4e9fa3c0a7175e7a/background.png"
           ],
           "assets": [
             {
@@ -26,27 +25,18 @@
               "height": null
             },
             {
-              "id": "2cwfeFY8EARH1o9H7tMHvZ",
-              "title": "test",
-              "url": "https://images.ctfassets.net/kgajkzbxa0pd/2cwfeFY8EARH1o9H7tMHvZ/8a75f9622185c8e18dcd98d7c5575abf/Longwood_Gardens-Italian_Garden.jpg",
-              "fileName": null,
-              "contentType": null,
-              "width": null,
-              "height": null
-            },
-            {
-              "id": "2OjTF17SIQKyc99162K4g9",
-              "title": "Test-2",
-              "url": "https://images.ctfassets.net/kgajkzbxa0pd/2OjTF17SIQKyc99162K4g9/8c7f7b26c0fc1e771ad2291d185d44fb/Top_of_Atmosphere.jpg",
-              "fileName": null,
-              "contentType": null,
-              "width": null,
-              "height": null
-            },
-            {
               "id": "1h4NF574aI7yr0RGPyxmnZ",
               "title": "Fellowship",
               "url": "https://images.ctfassets.net/kgajkzbxa0pd/1h4NF574aI7yr0RGPyxmnZ/106ed52a2004ac6c56600162b7f3a52a/IMG_4649.JPG",
+              "fileName": null,
+              "contentType": null,
+              "width": null,
+              "height": null
+            },
+            {
+              "id": "FXi0cmGso7Oa1XuRi6rx9",
+              "title": "Church",
+              "url": "https://images.ctfassets.net/kgajkzbxa0pd/FXi0cmGso7Oa1XuRi6rx9/9952b24b618c104a4e9fa3c0a7175e7a/background.png",
               "fileName": null,
               "contentType": null,
               "width": null,

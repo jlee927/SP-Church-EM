@@ -5,8 +5,17 @@ import forestbg from "../assets/images/forestbg.jpg";
 import AppNavbar from "../components/AppNavbar";
 import QuickInfo from "../components/QuickInfo";
 import VerseOfTheDay from "../components/VerseOfTheDay";
+import CommunityStrip from "../components/CommunityStrip";
 
 export default function Home() {
+
+  const photos = [
+    "https://images.ctfassets.net/kgajkzbxa0pd/FXi0cmGso7Oa1XuRi6rx9/9952b24b618c104a4e9fa3c0a7175e7a/background.png",
+    "https://images.ctfassets.net/kgajkzbxa0pd/3w5Wm9cdheqF1XPvnoWuHn/3dae330ad65bb580d760e3744a6ecb5a/IMG_4650.JPG",
+    "https://images.ctfassets.net/kgajkzbxa0pd/3w5Wm9cdheqF1XPvnoWuHn/3dae330ad65bb580d760e3744a6ecb5a/IMG_4650.JPG",
+    "https://images.ctfassets.net/kgajkzbxa0pd/2cwfeFY8EARH1o9H7tMHvZ/8a75f9622185c8e18dcd98d7c5575abf/Longwood_Gardens-Italian_Garden.jpg",
+  ]
+
   const [showTopBtn, setShowTopBtn] = useState(false);
 
   const handleScrollToQuickInfo = () => {
@@ -114,12 +123,34 @@ export default function Home() {
       </section>
 
       {/* INFO PANEL */}
+      {/*<VerseOfTheDay />*/}
       <section id="quickinfo" className="relative bg-white ">
         <div className="min-h-[100vh]" style={{ backgroundImage: `url(${forestbg})` }}>
           <QuickInfo />
         </div>
-        {/*<VerseOfTheDay />*/}
       </section>
+
+      <section>
+        <div className="relative min-h-[100vh]
+          bg-gradient-to-b
+          from-transparent
+          via-white/70
+          to-white
+         ">
+          <CommunityStrip
+            variant="hover"
+            items={[
+              { src: photos[0], title: "Sunday Worship" },
+              { src: photos[1], title: "Fellowship Night", text: "College & young adults" },
+              { src: photos[2], title: "Service Project" },
+            ]}
+          />
+
+
+        </div>
+
+      </section>
+
 
       {/* FLOATING BACK-TO-TOP BUTTON */}
       <button
