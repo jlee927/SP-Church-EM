@@ -26,15 +26,19 @@ export default function Gallery() {
   }, [albums, q]);
 
   return (
-    <div className="bg-min-h-screen text-[#0e5a96]">
+    <div className="min-h-screen bg-white !font-sans text-[#0e5a96]">
       {/* Hero */}
-      <section className="relative h-[50vh] bg-cover bg-center flex items-center "
+      <section
+        className="relative h-[50vh] bg-cover bg-center flex items-center"
         style={{ backgroundImage: `url(${bgHero})` }}
+        aria-label="Gallery hero"
       >
         <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-white/0" />
-        <div className="mt-12 relative z-10 text-center mx-6 md:mx-24 lg:mx-36">
-          <h1 className="text-5xl font-bold text-[#116db5] drop-shadow-md">Gallery</h1>
-          <p>Browse Album</p>
+        <div className="mt-2 relative mx-6 md:mx-24 lg:mx-36">
+          <h1 className="!font-heading-en text-5xl font-bold !text-[#116db5] drop-shadow-md">
+            Gallery
+          </h1>
+          <p className="!font-subhead text-base/7 opacity-90">Browse Album</p>
         </div>
       </section>
 
@@ -45,7 +49,7 @@ export default function Gallery() {
           onChange={(e) => setParams(e.target.value ? { q: e.target.value } : {})}
           type="text"
           placeholder="Search albums…"
-          className="w-full px-4 py-2 rounded-full border border-gray-200 text-sm focus:outline-none"
+          className="w-full px-4 py-2 rounded-full border border-gray-200 text-sm focus:outline-none !font-sans"
         />
       </div>
 
@@ -71,18 +75,22 @@ export default function Gallery() {
                 alt={album.name}
                 className="absolute inset-0 w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" /> {/* dark overlay */}
+              <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
 
               {/* Text overlay */}
               <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4">
-                <h3 className="text-2xl md:text-3xl font-bold drop-shadow-lg">{album.name}</h3>
-                <p className="text-sm opacity-80 mt-1">{album.count} photo(s)</p>
+                <h3 className="!font-heading-en text-2xl md:text-3xl font-bold drop-shadow-lg">
+                  {album.name}
+                </h3>
+                <p className="!font-subhead text-sm opacity-90 mt-1">
+                  {album.count} photo(s)
+                </p>
               </div>
             </Link>
           );
         })}
         {!filtered.length && (
-          <p className="text-sm text-[#0e5a96]/70">No albums match “{q}”.</p>
+          <p className="!font-subhead text-sm text-[#0e5a96]/70">No albums match “{q}”.</p>
         )}
       </div>
     </div>

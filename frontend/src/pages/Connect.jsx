@@ -258,11 +258,6 @@ export default function Connect() {
                   Send Email
                 </button>
               </div>
-
-              <p className="!text-xs !font-sans !text-slate-500">
-                Tip: Want this to send without opening an email app? Hook this form up to
-                Formspree, Netlify Forms, or your API later—no UI changes needed.
-              </p>
             </form>
           </div>
 

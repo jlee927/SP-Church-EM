@@ -106,9 +106,6 @@ export default function AlbumView() {
                 className="w-full h-56 object-cover"
               />
               <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/40 to-transparent" />
-              <div className="absolute inset-x-0 bottom-0 p-3 text-white">
-                <h3 className="font-semibold text-sm">{p.title || "Untitled"}</h3>
-              </div>
             </button>
           ))}
         </div>
