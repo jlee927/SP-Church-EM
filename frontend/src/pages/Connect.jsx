@@ -14,8 +14,8 @@ export default function Connect() {
   });
   const [errors, setErrors] = useState({});
 
-  const CHURCH_EMAIL = "youremail@yourchurch.org";
-  const CHURCH_ADDRESS = "1234 Main St, Your City, IL 60607";
+  const CHURCH_EMAIL = "springwellchurchem@gmail.com";
+  const CHURCH_ADDRESS = "2025 S Goebbert Rd";
 
   const mapSrc = useMemo(
     () =>
@@ -75,7 +75,7 @@ export default function Connect() {
 
         aria-label="Connect with Springwell Presbyterian Church"
       >
-        <div className="relative mt-4 z-10 mx-6 md:mx-24 lg:mx-36 pt-32 md:pt-40 pb-12 !text-[#116db5] max-w-3xl">
+        <div className="relative mt-4 z-10 mx-6 md:mx-24 lg:mx-36 pt-24 md:pt-32 pb-12 !text-[#116db5] max-w-3xl">
           <h1 className="!font-heading-en !text-5xl !font-bold drop-shadow-lg leading-tight">
             Connect
           </h1>

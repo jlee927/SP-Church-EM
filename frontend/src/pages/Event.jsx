@@ -177,7 +177,7 @@ export default function Event() {
         className="h-[50vh] bg-cover bg-center bg md:bg-top flex"
         style={{ backgroundImage: `url(${bgHero})` }}
       >
-        <div className="mt-48 z-10 w-full mx-6 md:mx-24 lg:mx-36 pb-6">
+        <div className="mt-40 z-10 w-full mx-6 md:mx-24 lg:mx-36 pb-6">
           <h1 className="!font-heading-en !text-4xl md:!text-5xl !font-bold !text-[#116db5] drop-shadow-sm">
             Events
           </h1>

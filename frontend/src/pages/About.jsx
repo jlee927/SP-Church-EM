@@ -30,7 +30,7 @@ export default function About() {
     <div className="bg-white min-h-screen !font-sans">
       {/* HERO */}
       <section
-        className="relative h-[48vh] bg-cover bg-top !flex flex-col text-center pt-32 md:pt-40 pb-24"
+        className="relative h-[48vh] bg-cover bg-top !flex flex-col text-center pt-20 md:pt-28 pb-24"
         style={{
           backgroundImage:
             "url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80')",
@@ -69,7 +69,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* LEADERSHIP / COMMUNITY */}
       {/* LEADERSHIP / COMMUNITY */}
       <section className="max-w-6xl mx-auto px-6 py-16">
         <h2 className="!text-3xl !font-bold !text-[#116db5] text-center !font-heading-en">
