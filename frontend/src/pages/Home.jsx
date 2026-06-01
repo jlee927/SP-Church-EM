@@ -45,86 +45,75 @@ export default function Home() {
       {/* HERO */}
       <section
         id="hero"
-        className="relative min-h-[100vh] bg-cover bg-center md:bg-top"
-        style={{ backgroundImage: `url(${bg3})` }}
+        className="relative min-h-[100vh] overflow-hidden bg-white"
         aria-label="Spring Well Presbyterian Church hero"
       >
-        {/* soft overlay for readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/10 to-white/0" />
+        <div
+          className="absolute inset-0 bg-cover bg-center md:bg-top opacity-80"
+          style={{ backgroundImage: `url(${bg3})` }}
+        />
 
-        {/* hero content */}
-        <div className="flex">
-          <div
-            className="
-            relative z-10
-            mx-6 md:mx-24 lg:mx-36
-            pt-32 md:pt-48 pb-24
-            !text-[#116db5]
-            max-w-3xl
-          "
-          >
-            {/* Korean heading */}
-            <h1 className="!font-heading-ko !text-5xl !font-semi drop-shadow-lg leading-tight">
+        <div className="absolute inset-0 bg-white/10" />
+
+        <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-b from-transparent to-white" />
+
+        <div className="relative z-10 mx-auto flex min-h-[100vh] w-full max-w-7xl items-center px-6 md:px-10 lg:px-12 2xl:-mt-16">
+          <div className="max-w-3xl -translate-y-8 !text-[#116db5]">
+            <h1 className="!font-heading-ko !text-5xl !font-semi drop-shadow-lg leading-tight ">
               생명샘 장로교회
             </h1>
 
-            {/* English heading */}
             <h1 className="!font-heading-en mt-2 !text-5xl !font-bold drop-shadow-lg leading-tight">
               Spring Well Presbyterian Church
             </h1>
 
-            {/* Subheading */}
             <h2 className="!font-subhead mt-3 !text-2xl !font-semibold drop-shadow-sm">
               English Ministry
             </h2>
 
-            {/* Tagline */}
             <p className="!font-subhead mt-2 !text-lg/7 italic">
               A place of worship, community, and hope
             </p>
 
-            {/* primary CTA */}
             <div className="mt-6">
               <button
                 onClick={handleScrollToQuickInfo}
                 className="
-                inline-flex items-center gap-2
-                !rounded-full px-7 py-2
-                !font-heading-en
-                bg-white !text-[#116db5] border border-white
-                shadow-sm
-                transition-all duration-200
-                hover:!bg-gray-100 hover:!border-gray-100
-                focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#116db5]/40
-              "
+            inline-flex items-center gap-2
+            !rounded-full px-7 py-2
+            !font-heading-en
+            bg-white !text-[#116db5] border border-white
+            shadow-sm
+            transition-all duration-200
+            hover:!bg-gray-100 hover:!border-gray-100
+            focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#116db5]/40
+          "
               >
-                Learn More
+                Plan a Visit
               </button>
             </div>
           </div>
 
-          {/* decorative cross on right side */}
-          <div className="mt-48 ml-28 opacity-10 z-0">
+          <div className="pointer-events-none absolute right-24 top-1/2 hidden -translate-y-1/2 lg:block opacity-10 -mt-12">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 384 512"
-              className="w-[200px] h-[200px] !text-[#116db5] fill-current"
+              className="w-[220px] h-[220px] !text-[#116db5] fill-current"
             >
               <path d="M368 144H240V24c0-13.3-10.7-24-24-24h-48c-13.3 0-24 10.7-24 
-              24v120H16c-8.8 0-16 7.2-16 16v64c0 8.8 7.2 16 16 
-              16h128v248c0 13.3 10.7 24 24 24h48c13.3 0 24-10.7 
-              24-24V240h128c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16z"/>
+        24v120H16c-8.8 0-16 7.2-16 16v64c0 8.8 7.2 16 16 
+        16h128v248c0 13.3 10.7 24 24 24h48c13.3 0 24-10.7 
+        24-24V240h128c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16z"/>
             </svg>
           </div>
         </div>
-
-        {/* soft fade into next section */}
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-b from-transparent to-white" />
       </section>
 
       {/* INFO PANEL */}
       {/*<VerseOfTheDay />*/}
-      <section id="quickinfo" className="relative bg-white ">
+      <section className="relative bg-white ">
+        <div id="quickinfo" className="pt-12">
+        </div>
         <div className="min-h-[100vh]" style={{ backgroundImage: `url(${forestbg})` }}>
           <QuickInfo />
         </div>
@@ -147,6 +136,16 @@ export default function Home() {
           />
 
 
+        </div>
+
+        {/* Delete Later useful for responsive screens */}
+        <div className="fixed bottom-4 left-4 z-[9999] rounded bg-black px-3 py-2 text-sm text-white">
+          <span className="sm:hidden">base</span>
+          <span className="hidden sm:inline md:hidden">sm</span>
+          <span className="hidden md:inline lg:hidden">md</span>
+          <span className="hidden lg:inline xl:hidden">lg</span>
+          <span className="hidden xl:inline 2xl:hidden">xl</span>
+          <span className="hidden 2xl:inline">2xl</span>
         </div>
 
       </section>
