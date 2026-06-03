@@ -43,26 +43,41 @@ export default function Footer() {
             <h4 className="text-lg font-semibold">Connect With Us</h4>
             <p className="mt-4 text-sm text-[#0e5a96]/80">Join our community online:</p>
             <div className="mt-3 flex justify-center md:justify-start gap-3">
+              {/*
               <a href="#" className="h-9 w-9 flex items-center justify-center rounded-full bg-white ring-1 ring-[#116db5]/20 text-[#116db5] hover:bg-sky-50 focus:outline-none focus:ring-2 focus:ring-[#116db5]/40" aria-label="Instagram">
-                {/* Instagram */}
+              */}
+              {/* Instagram */}
+              {/*
+
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 max-w-full" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" role="img" aria-hidden="true">
                   <rect x="3" y="3" width="18" height="18" rx="5" />
                   <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                   <path d="M17.5 6.5h.01" />
                 </svg>
               </a>
+
               <a href="#" className="h-9 w-9 flex items-center justify-center rounded-full bg-white ring-1 ring-[#116db5]/20 text-[#116db5] hover:bg-sky-50 focus:outline-none focus:ring-2 focus:ring-[#116db5]/40" aria-label="Facebook">
-                {/* Facebook */}
+
+              */}
+              {/* Facebook */}
+              {/*
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 max-w-full" viewBox="0 0 24 24" fill="currentColor" role="img" aria-hidden="true">
                   <path d="M13 22v-8h3l1-4h-4V7.5A1.5 1.5 0 0 1 14.5 6H17V2h-3.5A5.5 5.5 0 0 0 8 7.5V10H5v4h3v8h5z" />
                 </svg>
               </a>
+              */}
+
+              {/*
               <a href="#" className="h-9 w-9 flex items-center justify-center rounded-full bg-white ring-1 ring-[#116db5]/20 text-[#116db5] hover:bg-sky-50 focus:outline-none focus:ring-2 focus:ring-[#116db5]/40" aria-label="YouTube">
-                {/* YouTube */}
+              */}
+              {/* YouTube */}
+              {/*
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 max-w-full" viewBox="0 0 24 24" fill="currentColor" role="img" aria-hidden="true">
                   <path d="M23 7a3 3 0 0 0-2.1-2.1C19 4.5 12 4.5 12 4.5s-7 0-8.9.4A3 3 0 0 0 1 7c-.4 1.9-.4 5.9-.4 5.9s0 4 .4 5.9A3 3 0 0 0 3.1 21C5 21.5 12 21.5 12 21.5s7 0 8.9-.4a3 3 0 0 0 2.1-2.1c.4-1.9.4-5.9.4-5.9s0-4-.4-5.9zM9.75 15.02V8.98L15.5 12l-5.75 3.02z" />
                 </svg>
               </a>
+              */}
+
             </div>
 
             {/* Optional newsletter */}
