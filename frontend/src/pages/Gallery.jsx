@@ -12,7 +12,7 @@ export default function Gallery() {
   const q = params.get("q") ?? "";
 
   useEffect(() => {
-    fetch("/albums.json")
+    fetch("/albums2.json")
       .then((r) => r.json())
       .then(setData)
       .catch((e) => console.error("albums.json load failed", e));

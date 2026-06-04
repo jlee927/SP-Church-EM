@@ -1,0 +1,57 @@
+{
+  "albums": [
+    {
+      "name": "Fellowship",
+      "count": 11,
+      "items": [
+        {
+          "cover": "/fellowship/1_20250810_181348.jpg",
+          "photos": [
+            "/fellowship/1_20250810_181348.jpg",
+            "/fellowship/1_20250810_181358.jpg",
+            "/fellowship/1_KakaoTalk_20250907_203804132.jpg",
+            "/fellowship/1_KakaoTalk_20250908_193351957_01.jpg",
+            "/fellowship/1_KakaoTalk_20250908_193351957_02.jpg",
+            "/fellowship/1_KakaoTalk_20250908_193351957.jpg",
+            "/fellowship/20250810_181358.jpg",
+            "/fellowship/20250907_170816.jpg",
+            "/fellowship/KakaoTalk_20250907_203804132_01.jpg",
+            "/fellowship/KakaoTalk_20250907_203804132.jpg"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Starved Rock",
+      "count": 22,
+      "items": [
+        {
+          "cover": "/starved_rock/1_20241006_150710.jpg",
+          "photos": [
+            "/starved_rock/1_20241006_150710.jpg",
+            "/starved_rock/20241006_142920.jpg",
+            "/starved_rock/20241006_142922.jpg",
+            "/starved_rock/20241006_142924.jpg",
+            "/starved_rock/20241006_142927.jpg",
+            "/starved_rock/20241006_143044.jpg",
+            "/starved_rock/20241006_143850.jpg",
+            "/starved_rock/20241006_143852.jpg",
+            "/starved_rock/20241006_144139.jpg",
+            "/starved_rock/20241006_144145.jpg",
+            "/starved_rock/20241006_145418.jpg",
+            "/starved_rock/20241006_145426.jpg",
+            "/starved_rock/20241006_145515.jpg",
+            "/starved_rock/20241006_145517.jpg",
+            "/starved_rock/20241006_150626.jpg",
+            "/starved_rock/20241006_150700.jpg",
+            "/starved_rock/20241006_150701.jpg",
+            "/starved_rock/20241006_150708.jpg",
+            "/starved_rock/20241006_150710.jpg",
+            "/starved_rock/20241006_150711.jpg",
+            "/starved_rock/20241006_151925-scaled.jpg"
+          ]
+        }
+      ]
+    }
+  ]
+}

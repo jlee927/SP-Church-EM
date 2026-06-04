@@ -14,6 +14,7 @@ export default function Home() {
     "https://images.ctfassets.net/kgajkzbxa0pd/3w5Wm9cdheqF1XPvnoWuHn/3dae330ad65bb580d760e3744a6ecb5a/IMG_4650.JPG",
     "https://images.ctfassets.net/kgajkzbxa0pd/3w5Wm9cdheqF1XPvnoWuHn/3dae330ad65bb580d760e3744a6ecb5a/IMG_4650.JPG",
     "https://images.ctfassets.net/kgajkzbxa0pd/2cwfeFY8EARH1o9H7tMHvZ/8a75f9622185c8e18dcd98d7c5575abf/Longwood_Gardens-Italian_Garden.jpg",
+    "https://images.ctfassets.net/fk7muqopeh95/3Yx3zrZk6MoswLUwYMP3FP/93eb24ca74dbe1029ba9036dd835bca7/20241006_142509-scaled.jpg"
   ]
 
   const [showTopBtn, setShowTopBtn] = useState(false);
@@ -131,14 +132,14 @@ export default function Home() {
             items={[
               { src: photos[0], title: "Sunday Worship" },
               { src: photos[1], title: "Fellowship Night", text: "College & young adults" },
-              { src: photos[2], title: "Service Project" },
+              { src: photos[4], title: "Hiking Trip", text: "Starved Rock" },
             ]}
           />
-
 
         </div>
 
         {/* Delete Later useful for responsive screens */}
+        {/*
         <div className="fixed bottom-4 left-4 z-[9999] rounded bg-black px-3 py-2 text-sm text-white">
           <span className="sm:hidden">base</span>
           <span className="hidden sm:inline md:hidden">sm</span>
@@ -147,6 +148,7 @@ export default function Home() {
           <span className="hidden xl:inline 2xl:hidden">xl</span>
           <span className="hidden 2xl:inline">2xl</span>
         </div>
+        */}
 
       </section>
 
