@@ -26,6 +26,7 @@ export default function Footer() {
           </div>
 
           {/* Column 2: Navigation */}
+          {/*
           <div className="text-center md:text-left">
             <h4 className="text-lg font-semibold">Explore</h4>
             <ul className="mt-4 space-y-2 text-sm">
@@ -37,11 +38,12 @@ export default function Footer() {
               <li><a href="#contact" className="hover:text-[#116db5] !no-underline break-words">Contact</a></li>
             </ul>
           </div>
+          */}
 
           {/* Column 3: Connect */}
           <div className="text-center md:text-left">
             <h4 className="text-lg font-semibold">Connect With Us</h4>
-            <p className="mt-4 text-sm text-[#0e5a96]/80">Join our community online:</p>
+            <p className="mt-4 text-sm text-[#0e5a96]/80">Join our community online</p>
             <div className="mt-3 flex justify-center md:justify-start gap-3">
               {/*
               <a href="#" className="h-9 w-9 flex items-center justify-center rounded-full bg-white ring-1 ring-[#116db5]/20 text-[#116db5] hover:bg-sky-50 focus:outline-none focus:ring-2 focus:ring-[#116db5]/40" aria-label="Instagram">
@@ -81,6 +83,7 @@ export default function Footer() {
             </div>
 
             {/* Optional newsletter */}
+            {/*
             <form className="mt-4 flex flex-col gap-2 sm:flex-row sm:items-stretch">
               <label htmlFor="newsletter" className="sr-only">Email address</label>
               <input
@@ -96,6 +99,7 @@ export default function Footer() {
                 Subscribe
               </button>
             </form>
+            */}
           </div>
         </div>
 
