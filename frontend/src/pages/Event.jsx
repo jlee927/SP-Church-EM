@@ -95,7 +95,7 @@ export default function Event() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    fetch("/events.json")
+    fetch("/events2.json")
       .then((r) => r.json())
       .then((data) => setEvents(Array.isArray(data?.events) ? data.events : []))
       .catch(() => setError("Failed to load events."))
