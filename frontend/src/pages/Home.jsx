@@ -14,7 +14,8 @@ export default function Home() {
     "https://images.ctfassets.net/kgajkzbxa0pd/3w5Wm9cdheqF1XPvnoWuHn/3dae330ad65bb580d760e3744a6ecb5a/IMG_4650.JPG",
     "https://images.ctfassets.net/kgajkzbxa0pd/3w5Wm9cdheqF1XPvnoWuHn/3dae330ad65bb580d760e3744a6ecb5a/IMG_4650.JPG",
     "https://images.ctfassets.net/kgajkzbxa0pd/2cwfeFY8EARH1o9H7tMHvZ/8a75f9622185c8e18dcd98d7c5575abf/Longwood_Gardens-Italian_Garden.jpg",
-    "https://images.ctfassets.net/fk7muqopeh95/3Yx3zrZk6MoswLUwYMP3FP/93eb24ca74dbe1029ba9036dd835bca7/20241006_142509-scaled.jpg"
+    "https://images.ctfassets.net/fk7muqopeh95/3Yx3zrZk6MoswLUwYMP3FP/93eb24ca74dbe1029ba9036dd835bca7/20241006_142509-scaled.jpg",
+    "https://images.ctfassets.net/fk7muqopeh95/76H2KV3sWow5GHSMtVbS6J/d8d41f39b8c6cee7d0e6d93a446b7db3/brochure.jpg"
   ]
 
   const [showTopBtn, setShowTopBtn] = useState(false);
@@ -110,7 +111,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* INFO PANEL */}
+
+      {/* INFO PANEL (JOIN US THIS SUNDAY) */}
       {/*<VerseOfTheDay />*/}
       <section className="relative bg-white ">
         <div id="quickinfo" className="pt-12">
@@ -120,6 +122,53 @@ export default function Home() {
         </div>
       </section>
 
+
+      {/* BROCHURE / SERMON RESOURCE SECTION */}
+      <section className="relative overflow-hidden bg-slate-50 py-16 border-t border-slate-100">
+        <div className="mx-auto max-w-6xl px-6 md:px-10">
+          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
+
+            {/* Left Content Column */}
+            <div className="lg:col-span-6">
+              <span className="!font-subhead !text-sm !font-semibold uppercase tracking-[0.18em] !text-[#116db5]/75">
+                Sunday Resource
+              </span>
+              <h2 className="mt-2 !font-heading-en text-3xl font-bold tracking-tight text-[#116db5] sm:text-4xl lg:text-5xl">
+                Sermon & Ministry Guide
+              </h2>
+              <p className="mt-4 !font-subhead text-base leading-relaxed text-slate-600 sm:text-lg">
+                Explore our sermon outline on Luke 9:57–62, titled <em>"Same Life, Different Kingdom."</em> It breaks down what it truly means to follow Christ through freedom from comfort, procrastination, and looking back.
+              </p>
+            </div>
+
+            {/* Right Card Column */}
+            <div className="lg:col-span-6 flex justify-center">
+              <a
+                href={photos[5]}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative block w-full max-w-md overflow-hidden rounded-3xl bg-white p-3 ring-1 ring-slate-200 shadow-[0_20px_50px_-20px_rgba(17,109,181,0.25)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_25px_60px_-15px_rgba(17,109,181,0.35)]"
+              >
+                <div className="relative overflow-hidden rounded-2xl bg-slate-100">
+                  <img
+                    src={photos[5]}
+                    alt="Sermon Guide - Same Life, Different Kingdom"
+                    className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-end justify-center pb-6">
+                    <span className="rounded-full bg-white/95 px-5 py-2.5 text-sm font-semibold text-[#116db5] shadow-lg">
+                      Click to View
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* COMMUNITY STRIP */}
       <section>
         <div className="relative min-h-[100vh]
           bg-gradient-to-b
@@ -132,26 +181,11 @@ export default function Home() {
             items={[
               { src: photos[0], title: "Sunday Worship" },
               { src: photos[1], title: "Fellowship Night", text: "College & young adults" },
-              { src: photos[4], title: "Hiking Trip", text: "Starved Rock" },
+              { src: photos[4], title: "Starved Rock Trip" },
             ]}
           />
-
         </div>
-
-        {/* Delete Later useful for responsive screens */}
-        {/*
-        <div className="fixed bottom-4 left-4 z-[9999] rounded bg-black px-3 py-2 text-sm text-white">
-          <span className="sm:hidden">base</span>
-          <span className="hidden sm:inline md:hidden">sm</span>
-          <span className="hidden md:inline lg:hidden">md</span>
-          <span className="hidden lg:inline xl:hidden">lg</span>
-          <span className="hidden xl:inline 2xl:hidden">xl</span>
-          <span className="hidden 2xl:inline">2xl</span>
-        </div>
-        */}
-
       </section>
-
 
       {/* FLOATING BACK-TO-TOP BUTTON */}
       <button
