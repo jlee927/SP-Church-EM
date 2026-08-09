@@ -153,7 +153,7 @@ export default function Home() {
                   <img
                     src={photos[5]}
                     alt="Sermon Guide - Same Life, Different Kingdom"
-                    className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-auto object-cover scale-105 transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-end justify-center pb-6">
                     <span className="rounded-full bg-white/95 px-5 py-2.5 text-sm font-semibold text-[#116db5] shadow-lg">
